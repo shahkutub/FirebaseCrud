@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:gravity="center">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_140sdp"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/_5sdp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:layout_margin="@dimen/_10sdp"
+    >
+
+    <LinearLayout
+        android:id="@+id/linInstitute"
+        android:layout_width="@dimen/_140sdp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_2sdp"
+        >
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:src="@mipmap/ic_launcher"
+            />
+
+
+        <TextView
+            android:id="@+id/tvInsName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ফরেনসিক ট্রেনিং ইনস্টিটিউট"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_5sdp"
+            />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+
+
+
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:visibility="invisible"
+        android:layout_height="@dimen/_50sdp"/>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="@dimen/_35sdp"
+        android:layout_marginRight="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_20sdp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_15sdp"
+            android:text="User Type"
+            android:textColor="#fff"
+            android:visibility="gone"
+            android:textStyle="bold"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_5sdp"
+            android:visibility="gone"
+            android:background="@drawable/shahp_roundcorner_white"
+            >
+
+            <Spinner
+                android:id="@+id/spinner_user_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_15sdp"
+            android:text="Name"
+            android:textColor="#fff"
+            android:visibility="gone"
+            android:textStyle="bold"
+            />
+
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            android:background="@drawable/shahp_roundcorner_white"
+            android:hint="Name"
+            android:visibility="gone"
+            android:text=""
+            android:inputType="textCapSentences"
+            android:textSize="@dimen/_15sdp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_15sdp"
+            android:text="Mobile"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            />
+
+
+        <EditText
+            android:id="@+id/etMobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            android:background="@drawable/shahp_roundcorner_white"
+            android:hint="Mobile"
+            android:text=""
+            android:inputType="phone"
+            android:textSize="@dimen/_15sdp"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_15sdp"
+            android:text="Password"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/_10sdp"
+            />
+
+
+        <EditText
+            android:id="@+id/etPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            android:background="@drawable/shahp_roundcorner_white"
+            android:hint="Password"
+            android:text=""
+            android:textSize="@dimen/_15sdp"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSignin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_40sdp"
+            android:layout_marginLeft="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="Sign Up"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:padding="@dimen/_10sdp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/shahp_roundcorner_green"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>
