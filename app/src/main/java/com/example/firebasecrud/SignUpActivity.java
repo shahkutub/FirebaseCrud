@@ -98,7 +98,8 @@ public class SignUpActivity extends AppCompatActivity {
             databaseArtists.child(mobile).setValue(artist);
             //databaseArtists.setValue(artist);
 
-            Toast.makeText(this, "Artist added", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "User Created", Toast.LENGTH_LONG).show();
+            startActivity(new Intent(this,SignInActivity.class));
 
     }
 
@@ -113,8 +114,14 @@ public class SignUpActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot snapshot) {
                 User user = snapshot.getValue(User.class);
 
-                String demo=user.getUserMobile();
-                Toast.makeText(SignUpActivity.this, demo, Toast.LENGTH_SHORT).show();
+                if(user !=null){
+                        Toast.makeText(SignUpActivity.this, "User Exist", Toast.LENGTH_SHORT).show();
+
+                }else {
+                    addArtist();
+
+                }
+
 
                 //System.out.println("Author: " + newPost.get("userMobile:"));
 
