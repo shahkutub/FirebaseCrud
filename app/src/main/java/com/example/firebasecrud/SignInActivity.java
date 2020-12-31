@@ -99,6 +99,10 @@ public class SignInActivity extends AppCompatActivity {
         dR.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
+//                User university = snapshot.getValue(User.class);
+//                Toast.makeText(SignInActivity.this, ""+university.getUserMobile(), Toast.LENGTH_SHORT).show();
+
+
                 universityList.clear();
                 for (DataSnapshot postSnapshot: snapshot.getChildren()) {
                     User university = postSnapshot.getValue(User.class);
@@ -106,9 +110,6 @@ public class SignInActivity extends AppCompatActivity {
                     for (int i = 0; i <universityList.size() ; i++) {
                         Toast.makeText(SignInActivity.this, ""+universityList.get(i).getUserMobile(), Toast.LENGTH_SHORT).show();
                     }
-
-                    // here you can access to name property like university.name
-
                 }
             }
 

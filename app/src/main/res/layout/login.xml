@@ -162,7 +162,7 @@
             android:layout_marginRight="@dimen/_40sdp"
             android:layout_marginLeft="@dimen/_40sdp"
             android:layout_marginTop="@dimen/_20sdp"
-            android:text="Sign Up"
+            android:text="Log In"
             android:textAllCaps="false"
             android:textColor="#fff"
             android:padding="@dimen/_10sdp"

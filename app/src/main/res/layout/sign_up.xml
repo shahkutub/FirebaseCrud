@@ -13,7 +13,6 @@
     app:cardCornerRadius="@dimen/_5sdp"
     android:foreground="?android:attr/selectableItemBackground"
     android:clickable="true"
-    android:layout_margin="@dimen/_10sdp"
     >
 
     <LinearLayout
@@ -52,7 +51,7 @@
         android:id="@+id/progress_circular"
         android:layout_width="@dimen/_50sdp"
         android:layout_marginTop="@dimen/_10sdp"
-        android:visibility="invisible"
+        android:visibility="gone"
         android:layout_height="@dimen/_50sdp"/>
     <LinearLayout
         android:layout_width="fill_parent"
