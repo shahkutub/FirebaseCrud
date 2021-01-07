@@ -31,6 +31,8 @@ public class SignUpActivity extends AppCompatActivity {
 
     //our database reference object
     DatabaseReference databaseArtists;
+    DatabaseReference databaseBakiList;
+
     EditText etName;
     EditText etMobile;
     EditText etPass;
@@ -45,6 +47,8 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.sign_up);
 
         databaseArtists = FirebaseDatabase.getInstance().getReference("users");
+        databaseBakiList = FirebaseDatabase.getInstance().getReference("bakilist");
+
 
         //getting views
          etName = (EditText) findViewById(R.id.etName);
@@ -52,7 +56,15 @@ public class SignUpActivity extends AppCompatActivity {
          etPass = (EditText) findViewById(R.id.etPass);
 
         AppCompatButton buttonAddArtist = (AppCompatButton) findViewById(R.id.btnSignin);
+        AppCompatButton btnBakiLidt = (AppCompatButton) findViewById(R.id.btnBakiLidt);
 
+        btnBakiLidt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //addBaki();
+                getBakiuser();
+            }
+        });
 
 
         //adding an onclicklistener to button
@@ -83,6 +95,16 @@ public class SignUpActivity extends AppCompatActivity {
 
     }
 
+    private void addBaki() {
+       // databaseBakiList.push();
+        String id = databaseBakiList.push().getKey();
+        BakiUser bakiUser = new BakiUser("Ali mia","ajom pur","25300","20300",
+                "5000","gazi","01723335972","12-12-2020",
+                "21-01-2021");
+        databaseBakiList.child("01723335973").setValue(bakiUser);
+
+    }
+
     /*
      * This method is saving a new artist to the
      * Firebase Realtime Database
@@ -96,6 +118,8 @@ public class SignUpActivity extends AppCompatActivity {
 
             //Saving the Artist
             databaseArtists.child(mobile).setValue(artist);
+
+
             //databaseArtists.setValue(artist);
 
             Toast.makeText(this, "User Created", Toast.LENGTH_LONG).show();
@@ -147,4 +171,48 @@ public class SignUpActivity extends AppCompatActivity {
 
     }
 
+    public void getBaki(View view) {
+
+        //getBakiuser();
+    }
+
+    private void getBakiuser() {
+
+        DatabaseReference dR = FirebaseDatabase.getInstance().getReference("bakilist").child("01723335973");
+        List<User> universityList = new ArrayList<>();
+        dR.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                BakiUser user = snapshot.getValue(BakiUser.class);
+
+                if(user !=null){
+                    Toast.makeText(SignUpActivity.this, "User Exist: "+user.getName(), Toast.LENGTH_SHORT).show();
+
+                }else {
+                    addBaki();
+
+                }
+
+
+                //System.out.println("Author: " + newPost.get("userMobile:"));
+
+//                universityList.clear();
+//                for (DataSnapshot postSnapshot: snapshot.getChildren()) {
+//                    User university = postSnapshot.getValue(User.class);
+//                    universityList.add(university);
+//                    for (int i = 0; i <universityList.size() ; i++) {
+//                        if(mobile.equalsIgnoreCase(universityList.get(i).getUserMobile())){
+//                            Toast.makeText(SignUpActivity.this, "User Exist", Toast.LENGTH_SHORT).show();
+//                            break;
+//                        }
+//                    }
+//                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // System.out.println("The read failed: " + firebaseError.getMessage());
+            }
+        });
+    }
 }

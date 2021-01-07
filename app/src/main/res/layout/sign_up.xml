@@ -11,6 +11,7 @@
         android:layout_width="@dimen/_140sdp"
     android:layout_height="wrap_content"
     app:cardCornerRadius="@dimen/_5sdp"
+        android:visibility="gone"
     android:foreground="?android:attr/selectableItemBackground"
     android:clickable="true"
     >
@@ -165,6 +166,38 @@
             android:focusable="true"
             android:background="@drawable/shahp_roundcorner_green"
             android:textSize="@dimen/_15sdp" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnBakiLidt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_40sdp"
+            android:layout_marginLeft="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="baki List"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:padding="@dimen/_10sdp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/shahp_roundcorner_green"
+            android:textSize="@dimen/_15sdp" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnGatBaki"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_40sdp"
+            android:layout_marginLeft="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="Get Baki"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:padding="@dimen/_10sdp"
+            android:clickable="true"
+            android:onClick="getBaki"
+            android:focusable="true"
+            android:background="@drawable/shahp_roundcorner_green"
+            android:textSize="@dimen/_15sdp" />
+
     </LinearLayout>
 
 
